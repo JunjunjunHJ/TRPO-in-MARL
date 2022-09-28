@@ -9,4 +9,4 @@ data/
 .DS_Store
 _build/
 results/
-.out
+*.out
