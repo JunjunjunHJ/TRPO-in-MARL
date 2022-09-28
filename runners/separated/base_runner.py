@@ -47,6 +47,10 @@ class Runner(object):
 
         # dir
         self.model_dir = self.all_args.model_dir
+        
+        # zjk add
+        self.no_random_order = self.all_args.no_random_order
+        self.delta_actions_probs = np.random.rand(self.num_agents)
 
         if self.use_render:
             import imageio
@@ -132,14 +136,28 @@ class Runner(object):
             next_value = _t2n(next_value)
             self.buffer[agent_id].compute_returns(next_value, self.trainer[agent_id].value_normalizer)
 
+    # zjk add
+    def train_order(self, delta_actions_probs):
+        if self.no_random_order:
+        # train_agent_order = np.argsort(-delta_actions_probs)
+            train_agent_order = np.argsort(delta_actions_probs)
+        else:
+            train_agent_order = torch.randperm(self.num_agents)
+        return train_agent_order
+    
     def train(self):
         train_infos = []
         # random update order
 
         action_dim=self.buffer[0].actions.shape[-1]
         factor = np.ones((self.episode_length, self.n_rollout_threads, 1), dtype=np.float32)
-
-        for agent_id in torch.randperm(self.num_agents):
+        
+        # zjk add
+        train_agent_order = self.train_order(self.delta_actions_probs)
+        
+        # zjk modify
+        # for agent_id in torch.randperm(self.num_agents):
+        for agent_id in train_agent_order:    
             self.trainer[agent_id].prep_training()
             self.buffer[agent_id].update_factor(factor)
             available_actions = None if self.buffer[agent_id].available_actions is None \
@@ -228,9 +246,9 @@ class Runner(object):
         sHandler = logging.StreamHandler()
         sHandler.setFormatter(formatter)
         if self.all_args.env_name == "StarCraft2":
-            log_file_name = self.all_args.env_name + '_' + self.all_args.map_name + '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_' + str(self.all_args.seed)
+            log_file_name = self.all_args.env_name + '_' + self.all_args.map_name + '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name +  '_order_' + str(self.all_args.seed) 
         else:
-            log_file_name = self.all_args.env_name + '_' + self.all_args.scenario + '_' + self.all_args.agent_conf+ '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_' + str(self.all_args.seed)
+            log_file_name = self.all_args.env_name + '_' + self.all_args.scenario + '_' + self.all_args.agent_conf+ '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_order_' + str(self.all_args.seed)
         
         # if self.all_args.delta_actions_probs_order:
         #     log_file_name += "_order"

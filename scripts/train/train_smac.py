@@ -96,7 +96,7 @@ def main(args):
     
     # zjk modify
     run_dir = Path(os.path.split(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])[0]) /"results"/ \
-                        "master" / all_args.env_name / all_args.map_name / all_args.algorithm_name / all_args.experiment_name / str(all_args.seed)
+                        "order" / all_args.env_name / all_args.map_name / all_args.algorithm_name / all_args.experiment_name /"order"/ str(all_args.seed)
 
     # run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
     #                    0] + "/results") / all_args.env_name / all_args.map_name / all_args.algorithm_name / all_args.experiment_name / str(all_args.seed)
