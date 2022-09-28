@@ -309,5 +309,9 @@ def get_config():
                         default=5, help="the number of episodes to render a given env")
     parser.add_argument("--ifi", type=float, 
                         default=0.1, help="the play interval of each rendered image in saved video.")
-
+    
+    # zjk add: use no_random_order default False
+    parser.add_argument("--no_random_order", action='store_true', 
+                        default=False, help="use delta_actions_probs_order to train the agents")
+    
     return parser
