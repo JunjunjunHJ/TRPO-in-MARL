@@ -18,7 +18,7 @@ class SMACRunner(Runner):
         start = time.time()
         episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
 
-        last_battles_game = np.zeros(self.n_rollout_threads, dtype=np.float32)
+        last_battles_game = np.zeros(self.n_rollout_threads, dtype=np.float32) # 存的是所有线程的game
         last_battles_won = np.zeros(self.n_rollout_threads, dtype=np.float32)
 
         for episode in range(episodes):
@@ -67,10 +67,10 @@ class SMACRunner(Runner):
                     incre_battles_won = []
                     incre_battles_game = []                    
 
-                    for i, info in enumerate(infos):
+                    for i, info in enumerate(infos): # i 代表第i个线程
                         if 'battles_won' in info[0].keys():
                             battles_won.append(info[0]['battles_won'])
-                            incre_battles_won.append(info[0]['battles_won']-last_battles_won[i])
+                            incre_battles_won.append(info[0]['battles_won']-last_battles_won[i]) # 把一个log_interval个episode内的赢的数量
                         if 'battles_game' in info[0].keys():
                             battles_game.append(info[0]['battles_game'])
                             incre_battles_game.append(info[0]['battles_game']-last_battles_game[i])
@@ -92,6 +92,9 @@ class SMACRunner(Runner):
             if episode % self.eval_interval == 0 and self.use_eval:
                 self.logger.warning("Episode:{:>5}/{:>5}".format(episode,episodes))
                 self.eval(total_num_steps)
+                
+                # zjk add
+                self.writter.export_scalars_to_json(str(self.log_dir + '/summary.json'))
 
     def warmup(self):
         # reset env
@@ -201,7 +204,7 @@ class SMACRunner(Runner):
 
             
             # Obser reward and next obs
-            eval_obs, eval_share_obs, eval_rewards, eval_dones, eval_infos, eval_available_actions = self.eval_envs.step(eval_actions)
+            eval_obs, eval_share_obs, eval_rewards, eval_dones, eval_infos, eval_available_actions = self.eval_envs.step(eval_actions) # eval_rewards.shape: (1,6,1) (thread_num, agent_num, aciton_dim)
             for eval_i in range(self.n_eval_rollout_threads):
                 one_episode_rewards[eval_i].append(eval_rewards[eval_i])
 
@@ -215,7 +218,7 @@ class SMACRunner(Runner):
             for eval_i in range(self.n_eval_rollout_threads):
                 if eval_dones_env[eval_i]:
                     eval_episode += 1
-                    eval_episode_rewards[eval_i].append(np.sum(one_episode_rewards[eval_i], axis=0))
+                    eval_episode_rewards[eval_i].append(np.sum(one_episode_rewards[eval_i], axis=0)) # 一局的reward和
                     one_episode_rewards[eval_i] = []
                     if eval_infos[eval_i][0]['won']:
                         eval_battles_won += 1
