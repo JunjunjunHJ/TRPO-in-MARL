@@ -9,5 +9,5 @@ data/
 .DS_Store
 _build/
 results/
+*.log
 *.out
-logs/
