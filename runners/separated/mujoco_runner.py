@@ -84,7 +84,11 @@ class MujocoRunner(Runner):
 
             # eval
             if episode % self.eval_interval == 0 and self.use_eval:
+                self.logger.warning("Episode:{:>5}/{:>5}".format(episode,episodes))
                 self.eval(total_num_steps)
+                
+                # zjk add
+                self.writter.export_scalars_to_json(str(self.log_dir + '/summary.json'))
 
     def warmup(self):
         # reset env
@@ -219,4 +223,7 @@ class MujocoRunner(Runner):
                                   'eval_max_episode_rewards': [np.max(eval_episode_rewards)]}
                 self.log_env(eval_env_infos, total_num_steps)
                 print("eval_average_episode_rewards is {}.".format(np.mean(eval_episode_rewards)))
+                
+                # zjk add
+                self.logger.warning("\tEval_average_episode_rewards:{}".format(np.mean(eval_episode_rewards)))
                 break

@@ -1,0 +1,66 @@
+[ Wed Sep 28 17:41:22 2022 ] Episode:    0/ 6250
+[ Wed Sep 28 17:42:25 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 17:42:25 2022 ] 	Eval_episode_rewards:5.741100993377485
+[ Wed Sep 28 17:48:44 2022 ] Episode:   25/ 6250
+[ Wed Sep 28 17:50:07 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 17:50:07 2022 ] 	Eval_episode_rewards:7.949710264900663
+[ Wed Sep 28 17:56:43 2022 ] Episode:   50/ 6250
+[ Wed Sep 28 17:58:04 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 17:58:04 2022 ] 	Eval_episode_rewards:10.159819950331123
+[ Wed Sep 28 18:04:49 2022 ] Episode:   75/ 6250
+[ Wed Sep 28 18:06:17 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:06:17 2022 ] 	Eval_episode_rewards:11.645229718543035
+[ Wed Sep 28 18:12:54 2022 ] Episode:  100/ 6250
+[ Wed Sep 28 18:14:12 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:14:12 2022 ] 	Eval_episode_rewards:11.329263245033108
+[ Wed Sep 28 18:20:47 2022 ] Episode:  125/ 6250
+[ Wed Sep 28 18:22:17 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:22:17 2022 ] 	Eval_episode_rewards:12.5193501655629
+[ Wed Sep 28 18:28:52 2022 ] Episode:  150/ 6250
+[ Wed Sep 28 18:30:28 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:30:28 2022 ] 	Eval_episode_rewards:12.245809188741715
+[ Wed Sep 28 18:37:06 2022 ] Episode:  175/ 6250
+[ Wed Sep 28 18:38:45 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:38:45 2022 ] 	Eval_episode_rewards:12.67994619205297
+[ Wed Sep 28 18:45:17 2022 ] Episode:  200/ 6250
+[ Wed Sep 28 18:46:42 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 18:46:42 2022 ] 	Eval_episode_rewards:12.575486341059595
+[ Wed Sep 28 18:59:29 2022 ] Episode:  225/ 6250
+[ Wed Sep 28 19:01:04 2022 ] 	Eval_win_tate:0.0
+[ Wed Sep 28 19:01:04 2022 ] 	Eval_episode_rewards:13.922754552980116
+[ Wed Sep 28 19:07:32 2022 ] Episode:  250/ 6250
+[ Wed Sep 28 19:09:05 2022 ] 	Eval_win_tate:0.0625
+[ Wed Sep 28 19:09:05 2022 ] 	Eval_episode_rewards:14.969629552980127
+[ Wed Sep 28 19:15:31 2022 ] Episode:  275/ 6250
+[ Wed Sep 28 19:16:55 2022 ] 	Eval_win_tate:0.0625
+[ Wed Sep 28 19:16:55 2022 ] 	Eval_episode_rewards:14.923323675496677
+[ Wed Sep 28 19:23:22 2022 ] Episode:  300/ 6250
+[ Wed Sep 28 19:24:39 2022 ] 	Eval_win_tate:0.125
+[ Wed Sep 28 19:24:39 2022 ] 	Eval_episode_rewards:15.280318708609263
+[ Wed Sep 28 19:31:10 2022 ] Episode:  325/ 6250
+[ Wed Sep 28 19:32:51 2022 ] 	Eval_win_tate:0.09375
+[ Wed Sep 28 19:32:51 2022 ] 	Eval_episode_rewards:16.035751241721833
+[ Wed Sep 28 19:39:23 2022 ] Episode:  350/ 6250
+[ Wed Sep 28 19:40:49 2022 ] 	Eval_win_tate:0.09375
+[ Wed Sep 28 19:40:49 2022 ] 	Eval_episode_rewards:16.02907698675495
+[ Wed Sep 28 19:47:25 2022 ] Episode:  375/ 6250
+[ Wed Sep 28 19:48:46 2022 ] 	Eval_win_tate:0.375
+[ Wed Sep 28 19:48:46 2022 ] 	Eval_episode_rewards:17.277369619205295
+[ Wed Sep 28 19:56:09 2022 ] Episode:  400/ 6250
+[ Wed Sep 28 19:57:41 2022 ] 	Eval_win_tate:0.53125
+[ Wed Sep 28 19:57:41 2022 ] 	Eval_episode_rewards:17.993480960264893
+[ Wed Sep 28 20:05:55 2022 ] Episode:  425/ 6250
+[ Wed Sep 28 20:07:23 2022 ] 	Eval_win_tate:0.1875
+[ Wed Sep 28 20:07:23 2022 ] 	Eval_episode_rewards:16.192829056291384
+[ Wed Sep 28 20:14:01 2022 ] Episode:  450/ 6250
+[ Wed Sep 28 20:15:18 2022 ] 	Eval_win_tate:0.4375
+[ Wed Sep 28 20:15:18 2022 ] 	Eval_episode_rewards:17.538182947019862
+[ Wed Sep 28 20:22:00 2022 ] Episode:  475/ 6250
+[ Wed Sep 28 20:23:08 2022 ] 	Eval_win_tate:0.53125
+[ Wed Sep 28 20:23:08 2022 ] 	Eval_episode_rewards:17.615945778145694
+[ Wed Sep 28 20:29:49 2022 ] Episode:  500/ 6250
+[ Wed Sep 28 20:31:07 2022 ] 	Eval_win_tate:0.4375
+[ Wed Sep 28 20:31:07 2022 ] 	Eval_episode_rewards:17.4127173013245
+[ Wed Sep 28 20:37:59 2022 ] Episode:  525/ 6250
+[ Wed Sep 28 20:39:13 2022 ] 	Eval_win_tate:0.5
+[ Wed Sep 28 20:39:13 2022 ] 	Eval_episode_rewards:17.883071192052974

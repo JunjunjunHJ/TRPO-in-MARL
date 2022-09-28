@@ -1,9 +1,9 @@
 #!/bin/sh
 env="StarCraft2"
-map="3s5z"
-algo="happo"
+map="2c_vs_64zg"
+algo="hatrpo"
 exp="mlp"
-running_max=20
+running_max=10
 kl_threshold=0.06
 echo "env is ${env}, map is ${map}, algo is ${algo}, exp is ${exp}, max seed is ${seed_max}"
 for number in `seq ${running_max}`;

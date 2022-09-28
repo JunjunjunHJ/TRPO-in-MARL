@@ -230,7 +230,7 @@ class Runner(object):
         if self.all_args.env_name == "StarCraft2":
             log_file_name = self.all_args.env_name + '_' + self.all_args.map_name + '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_' + str(self.all_args.seed)
         else:
-            log_file_name = self.all_args.env_name + '_' + self.all_args.scenario + '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_' + str(self.all_args.seed)
+            log_file_name = self.all_args.env_name + '_' + self.all_args.scenario + '_' + self.all_args.agent_conf+ '_' + self.all_args.algorithm_name + '_' + self.all_args.experiment_name + '_' + str(self.all_args.seed)
         
         # if self.all_args.delta_actions_probs_order:
         #     log_file_name += "_order"

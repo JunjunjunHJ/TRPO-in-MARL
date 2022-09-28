@@ -104,9 +104,15 @@ def main(args):
         print("choose to use cpu...")
         device = torch.device("cpu")
         torch.set_num_threads(all_args.n_training_threads)
-
-    run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
-                       0] + "/results") / all_args.env_name / all_args.scenario / all_args.algorithm_name / all_args.experiment_name / str(all_args.seed)
+        
+        
+    # zjk modify
+    run_dir = Path(os.path.split(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])[0]) /"results"/ \
+                        "master" / all_args.env_name / all_args.scenario /all_args.agent_conf/ all_args.algorithm_name / all_args.experiment_name / str(all_args.seed)
+                        
+    # run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
+    #                    0] + "/results") / all_args.env_name / all_args.scenario / all_args.algorithm_name / all_args.experiment_name / str(all_args.seed)
+    
     if not run_dir.exists():
         os.makedirs(str(run_dir))
 
