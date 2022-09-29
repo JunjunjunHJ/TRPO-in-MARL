@@ -1,7 +1,7 @@
 #!/bin/sh
 env="StarCraft2"
 map="2c_vs_64zg"
-algo="hatrpo"
+algo="happo"
 exp="mlp"
 running_max=10
 kl_threshold=0.06

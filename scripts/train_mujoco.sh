@@ -1,9 +1,9 @@
 #!/bin/sh
 env="mujoco"
-scenario="Ant-v2"
-agent_conf="2x4"
+scenario="HalfCheetah-v2"
+agent_conf="3x2"
 agent_obsk=2
-algo="hatrpo"
+algo="happo"
 exp="mlp"
 running_max=10
 kl_threshold=1e-4
