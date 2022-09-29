@@ -88,7 +88,7 @@ class MujocoRunner(Runner):
                 self.eval(total_num_steps)
                 
                 # zjk add
-                self.writter.export_scalars_to_json(str(self.log_dir + '/summary.json'))
+                self.writter.export_scalars_to_json_with_history(str(self.log_dir + '/summary.json'))
 
     def warmup(self):
         # reset env
